@@ -2,15 +2,19 @@ Feature:
 	Calculating retirement age
 
 	Scenario: Exiting the program
-		Given The prompt “Enter the year of birth or <enter> to exit””
+		Given The prompt “Enter the year of birth or <enter> to exit”
 		When The user presses the “Enter” key
 		Then The program will end
 
 	Scenario Outline: Entering a valid birth year
-		Given The prompt “Enter the year of birth or <enter> to exit””
-		When The user enters a valid birth year EX: 1998
+		Given The prompt “Enter the year of birth or <enter> to exit”
+		When The user enters "<year>"
 		Then The program will store and use it to calculate retirement age later
-		Examples:
+		Examples: Years
+		| year |
+		| 1998 |
+		| 1937 |
+		| 1943 |
 
 
 
